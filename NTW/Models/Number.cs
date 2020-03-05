@@ -75,10 +75,6 @@ namespace NTW.Models
         char secondDigit = numberArray[1];
         wordNumber = ones[secondDigit];
       }
-      else
-      {
-        return "other";
-      }
       return wordNumber; 
     }
   }

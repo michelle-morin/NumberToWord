@@ -62,7 +62,7 @@ namespace NTW.Tests
     public void ConvertNumber_SkipZeros_ThreeHundred()
     {
       string wordNum = Number.ConvertNumber("300");
-      Assert.AreEqual("three hundred", wordNum);
+      Assert.AreEqual("three hundred ", wordNum);
     }
 
   }
