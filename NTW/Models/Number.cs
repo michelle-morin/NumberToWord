@@ -14,9 +14,14 @@ namespace NTW.Models
       try
       {
         int number = int.Parse(stringInputNumber);
+        char[] numberArray = stringInputNumber.ToCharArray();
         if (stringInputNumber.Length == 1)
         {
           return ones[stringInputNumber];
+        }
+        else if (stringInputNumber.Length == 2 && numberArray[0] == '1')
+        {
+          return teens[stringInputNumber];
         }
         else
         {

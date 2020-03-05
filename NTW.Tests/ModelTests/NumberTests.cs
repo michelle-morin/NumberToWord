@@ -26,8 +26,8 @@ namespace NTW.Tests
     [TestMethod]
     public void ConvertNumber_FirstDigitOne_Teen()
     {
-      string wordNum = Number.ConvertNumber("11");
-      Assert.AreEqual("eleven", wordNum);
+      string wordNum = Number.ConvertNumber("12");
+      Assert.AreEqual("twelve", wordNum);
     }
 
   }
