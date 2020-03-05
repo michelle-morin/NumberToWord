@@ -29,6 +29,13 @@ namespace NTW.Models
           char firstDigit = numberArray[0];
           return tens[firstDigit];
         }
+        else if (stringInputNumber.Length == 2 && numberArray[0] != '0')
+        {
+          char firstDigit = numberArray[0];
+          char secondDigit = numberArray[1];
+          string wordNumber = tens[firstDigit] + " " + ones[secondDigit];
+          return wordNumber;
+        }
         else
         {
           return "other";
