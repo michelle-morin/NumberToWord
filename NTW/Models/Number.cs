@@ -15,31 +15,25 @@ namespace NTW.Models
       {
         int number = int.Parse(stringInputNumber);
         char[] numberArray = stringInputNumber.ToCharArray();
-        if (stringInputNumber.Length == 1)
+        string convertedNumber = "";
+        if (stringInputNumber.Length <= 2)
         {
-          char inputNum = numberArray[0];
-          return ones[inputNum];
+          convertedNumber = ConvertTwoDigits(stringInputNumber);
         }
-        else if (stringInputNumber.Length == 2 && numberArray[0] == '1')
-        {
-          return teens[stringInputNumber];
-        }
-        else if (stringInputNumber.Length == 2 && numberArray[0] != '0' && numberArray[1] == '0')
+        else if (stringInputNumber.Length == 3 && numberArray[0] != '0')
         {
           char firstDigit = numberArray[0];
-          return tens[firstDigit];
-        }
-        else if (stringInputNumber.Length == 2 && numberArray[0] != '0')
-        {
-          char firstDigit = numberArray[0];
-          char secondDigit = numberArray[1];
-          string wordNumber = tens[firstDigit] + " " + ones[secondDigit];
-          return wordNumber;
+          string hundredsPlace = ones[firstDigit];
+          char[] otherDigits = { numberArray[1], numberArray[2] };
+          string remainingDigits = new String(otherDigits);
+          string wordRemainder = Number.ConvertTwoDigits(remainingDigits);
+          convertedNumber = hundredsPlace + " hundred " + wordRemainder;
         }
         else
         {
           return "other";
         }
+        return convertedNumber; 
       }
       catch (FormatException)
       {
@@ -49,6 +43,38 @@ namespace NTW.Models
       {
         return exception.Message;
       }
+    }
+
+    public static string ConvertTwoDigits(string stringInputNumber)
+    {
+      int number = int.Parse(stringInputNumber);
+      char[] numberArray = stringInputNumber.ToCharArray();
+      string wordNumber = "";
+      if (stringInputNumber.Length == 1)
+      {
+        char inputNum = numberArray[0];
+        wordNumber = ones[inputNum];
+      }
+      else if (stringInputNumber.Length == 2 && numberArray[0] == '1')
+      {
+        wordNumber = teens[stringInputNumber];
+      }
+      else if (stringInputNumber.Length == 2 && numberArray[0] != '0' && numberArray[1] == '0')
+      {
+        char firstDigit = numberArray[0];
+        wordNumber = tens[firstDigit];
+      }
+      else if (stringInputNumber.Length == 2 && numberArray[0] != '0')
+      {
+        char firstDigit = numberArray[0];
+        char secondDigit = numberArray[1];
+        wordNumber = tens[firstDigit] + " " + ones[secondDigit];
+      }
+      else
+      {
+        return "other";
+      }
+      return wordNumber; 
     }
   }
 }

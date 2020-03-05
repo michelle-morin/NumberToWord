@@ -47,7 +47,7 @@ namespace NTW.Tests
     [TestMethod]
     public void ConvertNumber_ThreeDigitNumbers_OneHundredTwenty()
     {
-      string wordNum = Number.ConvertNumber("120");
+      string wordNum = Number.ConvertNumber("122");
       Assert.AreEqual("one hundred twenty two", wordNum);
     }
 
