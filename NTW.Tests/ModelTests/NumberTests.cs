@@ -72,5 +72,12 @@ namespace NTW.Tests
       Assert.AreEqual("one thousand two hundred ", wordNum);
     }
 
+    [TestMethod]
+    public void ConvertNumber_TenThousandsNumbers_TenThousandFifty()
+    {
+      string wordNum = Number.ConvertNumber("10500");
+      Assert.AreEqual("ten thousand fifty", wordNum);
+    }
+
   }
 }
