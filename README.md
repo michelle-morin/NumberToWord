@@ -6,7 +6,7 @@
 
 ## Description
 
-_This console application translates numbers in numeric form into written words. For example, it would translate 384 into "three hundred eighty four"._
+_This console application translates numbers in numeric form into written words. For example, it would translate 384 into "three hundred eighty four". The program accepts input of numbers less than or equal to 1 trillion._
 
 ## Specifications:
 
@@ -25,7 +25,7 @@ _This console application translates numbers in numeric form into written words.
 | For a number with seven digits, the application returns a word corresponding to the first digit, the word "million", followed by a combination of words corresponding to the next three digits, the word "thousand", followed by the written form of the last three digits (as determined above) | 7,500,385 | "seven million five hundred thousand three hundred eighty five" |
 | For a number with eight digits, the application returns a word corresponding to the first two digits, the word "million", followed by a combination of words corresponding to the next three digits, the word "thousand", followed by the written form of the last three digits (as determined above) | 17,500,385 | "seventeen million five hundred thousand three hundred eighty five" |
 | For a number with nine digits, the application returns a word corresponding to the first three digits, the word "million", followed by a combination of words corresponding to the next three digits, the word "thousand", followed by the written form of the last three digits (as determined above) | 327,599,707 | "three hundred twenty seven million five hundred ninety nine thousand seven hundred seven" |
-| For a number with ten digits, the application returns a word corresponding to the first digit followed by the word "trillion", a word corresponding to the next three digits, the word "million", a combination of words corresponding to the next three digits, the word "thousand", followed by the written form of the last three digits (as determined above) | 4,327,599,707 | "four trillion three hundred twenty seven million five hundred ninety nine thousand seven hundred seven" |
+| For a number with ten digits, the application returns a word corresponding to the first digit followed by the word "trillion", a word corresponding to the next three digits, the word "million", a combination of words corresponding to the next three digits, the word "thousand", followed by the written form of the last three digits (as determined above) | 1000000000 | "one trillion" |
 
 ## Setup/Installation Requirements
 
