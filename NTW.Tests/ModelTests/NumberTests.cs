@@ -93,5 +93,14 @@ namespace NTW.Tests
       Assert.AreEqual("seven million five hundred two thousand three hundred eighty five", wordNum);
     }
 
+    [TestMethod]
+    public void ConvertNumber_TenMillions_TenMillionsWord()
+    {
+      string wordNum = Number.ConvertNumber("17502385");
+      Assert.AreEqual("seventeen million five hundred two thousand three hundred eighty five", wordNum);
+    }
+
+    
+
   }
 }
