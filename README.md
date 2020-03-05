@@ -20,6 +20,7 @@ _This console application translates numbers in numeric form into written words.
 | For a number with two digits (each digit is between 2 and 9), the application returns a combination of words for each digit | 22 | application breaks this into 20 at the ten's place and 2 at the one's place, then returns "twenty two" |
 | For a number with three digits, the application returns a combination of words corresponding to the first digit, the word "hundred", followed by the written form of the last two digits (as determined above) | 120 | "one hundred twenty" |
 | For a number with four digits, the application returns a combination of words corresponding to the first digit, the word "thousand", followed by the written form of the last three digits (as determined above) | 1050 | "one thousand fifty" |
+| For a number with five digits, the application returns a combination of words corresponding to the first two digits, the word "thousand", followed by the written form of the last three digits (as determined above) | 10,50 | "ten thousand fifty" |
 
 
 ## Setup/Installation Requirements
