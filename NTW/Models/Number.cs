@@ -63,6 +63,10 @@ namespace NTW.Models
         {
           convertedNumber = Number.ConvertFiveDigits(stringInputNumber, numberArray);
         }
+        else if (stringInputNumber.Length == 6)
+        {
+          convertedNumber = Number.ConvertSixDigits(stringInputNumber, numberArray);
+        }
         else
         {
           convertedNumber = "that's too large to convert at this time!";
@@ -79,6 +83,28 @@ namespace NTW.Models
       }
     }
 
+    public static string ConvertSixDigits(string stringInputNumber, char[] numberArray)
+    {
+      string convertedNumber = null;
+      if (numberArray[0] == '0')
+      {
+        char[] newNumArray = { numberArray[1], numberArray[2], numberArray[3], numberArray[4], numberArray[5] };
+        string newNumber = new String(newNumArray);
+        convertedNumber = Number.ConvertFiveDigits(newNumber, newNumArray);
+      }
+      else
+      {
+        char[] firstThree = { numberArray[0], numberArray[1], numberArray[2] };
+        string hundredThousands = new String(firstThree);
+        char[] lastThreeArray = { numberArray[3], numberArray[4], numberArray[5] };
+        string stringLastThree = new String(lastThreeArray);
+        string hundredThousandsPlace = Number.ConvertThreeDigits(hundredThousands, firstThree);
+        string remainder = Number.ConvertThreeDigits(stringLastThree, lastThreeArray);
+        convertedNumber = hundredThousandsPlace + " thousand " + remainder;
+      }
+      return convertedNumber;
+    }
+
     public static string ConvertFiveDigits(string stringInputNumber, char[] numberArray)
     {
       string convertedNumber = null;
@@ -88,7 +114,7 @@ namespace NTW.Models
         string newNumber = new String(newNumArray);
         convertedNumber = Number.ConvertFourDigits(newNumber, newNumArray);
       }
-      else if (numberArray[0] != '0')
+      else
       {
         char[] firstTwo = { numberArray[0], numberArray[1]};
         string firstDigits = new String(firstTwo);
