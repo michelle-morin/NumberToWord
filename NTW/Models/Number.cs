@@ -75,6 +75,10 @@ namespace NTW.Models
         {
           convertedNumber = Number.ConvertEightDigits(stringInputNumber, numberArray);
         }
+        else if (stringInputNumber.Length == 9)
+        {
+          convertedNumber = Number.ConvertNineDigits(stringInputNumber, numberArray);
+        }
         else
         {
           convertedNumber = "that's too large to convert at this time!";
@@ -89,6 +93,31 @@ namespace NTW.Models
       {
         return exception.Message;
       }
+    }
+
+    public static string ConvertNineDigits(string stringInputNumber, char[] numberArray)
+    {
+      string convertedNumber = null;
+      if (numberArray[0] == '0')
+      {
+        char[] newNumArray = { numberArray[1], numberArray[2], numberArray[3], numberArray[4], numberArray[5], numberArray[6], numberArray[7], numberArray[8] };
+        string newNumber = new String(newNumArray);
+        convertedNumber = Number.ConvertEightDigits(newNumber, newNumArray);
+      }
+      else
+      {
+        char[] firstThreeArray = { numberArray[0], numberArray[1], numberArray[2] };
+        string stringFirstThree = new String(firstThreeArray);
+        char[] secondThreeArray = { numberArray[3], numberArray[4], numberArray[5] };
+        string stringSecondThree = new String(secondThreeArray);
+        char[] lastThreeArray = { numberArray[6], numberArray[7], numberArray[8] };
+        string stringLastThree = new String(lastThreeArray);
+        string firstNumber = Number.ConvertThreeDigits(stringFirstThree, firstThreeArray);
+        string secondNumber = Number.ConvertThreeDigits(stringSecondThree, secondThreeArray);
+        string thirdNumber = Number.ConvertThreeDigits(stringLastThree, lastThreeArray);
+        convertedNumber = firstNumber + " million " + secondNumber + " thousand " + thirdNumber;
+      }
+      return convertedNumber;
     }
 
     public static string ConvertEightDigits(string stringInputNumber, char[] numberArray)
