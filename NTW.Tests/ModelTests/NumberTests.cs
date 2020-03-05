@@ -1,5 +1,7 @@
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;
+using NTW;
 using NTW.Models;
 
 namespace NTW.Tests
@@ -10,7 +12,8 @@ namespace NTW.Tests
     [TestMethod]
     public void ConvertNumber_RejectNonNumericalInputs_Error()
     {
-      
+      string wordNum = Number.ConvertNumber(0);
+      Assert.AreEqual("zero", wordNum);
     }
   }
 }
