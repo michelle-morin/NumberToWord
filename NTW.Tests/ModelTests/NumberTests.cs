@@ -30,5 +30,12 @@ namespace NTW.Tests
       Assert.AreEqual("twelve", wordNum);
     }
 
+    [TestMethod]
+    public void ConvertNumber_TwoDigitNumbersEndingInZero_Twenty()
+    {
+      string wordNum = Number.ConvertNumber("20");
+      Assert.AreEqual("twenty", wordNum);
+    }
+
   }
 }
