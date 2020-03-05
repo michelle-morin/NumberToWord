@@ -22,12 +22,7 @@ namespace NTW.Models
         }
         else if (stringInputNumber.Length == 3 && numberArray[0] != '0')
         {
-          char firstDigit = numberArray[0];
-          string hundredsPlace = ones[firstDigit];
-          char[] otherDigits = { numberArray[1], numberArray[2] };
-          string remainingDigits = new String(otherDigits);
-          string wordRemainder = Number.ConvertTwoDigits(remainingDigits);
-          convertedNumber = hundredsPlace + " hundred " + wordRemainder;
+          convertedNumber = Number.ConvertThreeDigits(stringInputNumber, numberArray);
         }
         else
         {
@@ -45,9 +40,19 @@ namespace NTW.Models
       }
     }
 
+    public static string ConvertThreeDigits(string stringInputNumber, char[] numberArray)
+    {
+      char firstDigit = numberArray[0];
+      string hundredsPlace = ones[firstDigit];
+      char[] otherDigits = { numberArray[1], numberArray[2] };
+      string remainingDigits = new String(otherDigits);
+      string wordRemainder = Number.ConvertTwoDigits(remainingDigits);
+      string wordNum = hundredsPlace + " hundred " + wordRemainder;
+      return wordNum;
+    }
+
     public static string ConvertTwoDigits(string stringInputNumber)
     {
-      int number = int.Parse(stringInputNumber);
       char[] numberArray = stringInputNumber.ToCharArray();
       string wordNumber = "";
       if (stringInputNumber.Length == 1)
@@ -74,6 +79,10 @@ namespace NTW.Models
       {
         char secondDigit = numberArray[1];
         wordNumber = ones[secondDigit];
+      }
+      else if (stringInputNumber.Length == 2 && numberArray[0] == '0' && numberArray[1] == '0')
+      {
+        wordNumber = null;
       }
       return wordNumber; 
     }
