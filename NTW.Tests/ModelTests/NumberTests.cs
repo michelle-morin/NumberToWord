@@ -105,7 +105,13 @@ namespace NTW.Tests
     {
       string wordNum = Number.ConvertNumber("327599707");
       Assert.AreEqual("three hundred twenty seven million five hundred ninety nine thousand seven hundred seven", wordNum);
-    }    
+    }
 
+    [TestMethod]
+    public void ConvertNumber_Trillions_TrillionWord()
+    {
+      string wordNum = Number.ConvertNumber("1000000000");
+      Assert.AreEqual("one trillion ", wordNum);
+    }
   }
 }
