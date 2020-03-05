@@ -8,7 +8,10 @@ namespace NTW
   {
     public static void Main()
     {
-      
+      Console.WriteLine("Enter a number in numerical form:");
+      string userInput = Console.ReadLine();
+      string wordNumber = Number.ConvertNumber(userInput);
+      Console.WriteLine($"The written form of {userInput} is {wordNumber}");
     }
   }
 }
