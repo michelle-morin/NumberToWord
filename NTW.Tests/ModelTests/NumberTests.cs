@@ -51,5 +51,12 @@ namespace NTW.Tests
       Assert.AreEqual("one hundred twenty two", wordNum);
     }
 
+    [TestMethod]
+    public void ConvertNumber_SkipsZeros_OneHundredThree()
+    {
+      string wordNum = Number.ConvertNumber("103");
+      Assert.AreEqual("one hundred three", wordNum);
+    }
+
   }
 }
