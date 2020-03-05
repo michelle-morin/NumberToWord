@@ -21,7 +21,8 @@ _This console application translates numbers in numeric form into written words.
 | For a number with three digits, the application returns a combination of words corresponding to the first digit, the word "hundred", followed by the written form of the last two digits (as determined above) | 120 | "one hundred twenty" |
 | For a number with four digits, the application returns a combination of words corresponding to the first digit, the word "thousand", followed by the written form of the last three digits (as determined above) | 1050 | "one thousand fifty" |
 | For a number with five digits, the application returns a combination of words corresponding to the first two digits, the word "thousand", followed by the written form of the last three digits (as determined above) | 10,50 | "ten thousand fifty" |
-| For a number with six digits, the application returns a combination of words corresponding to the first three digits, the word "thousand", followed by the written form of the last three digits (as determined above) | 250,003 | "two hundred fifty thousand three" |
+| For a number with six digits, the application returns a combination of words corresponding to the first three digits, the word "thousand", followed by the written form of the last three digits (as determined above) | 250003 | "two hundred fifty thousand three" |
+| For a number with seven digits, the application returns a word corresponding to the first digit, the word "million", followed by a combination of words corresponding to the next three digits, the word "thousand", followed by the written form of the last three digits (as determined above) | 7,500,385 | "seven million five hundred thousand three hundred eighty five" |
 
 
 ## Setup/Installation Requirements
