@@ -12,6 +12,13 @@ namespace NTW.Tests
     [TestMethod]
     public void ConvertNumber_RejectNonNumericalInputs_Error()
     {
+      string wordNum = Number.ConvertNumber("hi");
+      Assert.AreEqual("invalid input", wordNum);
+    }
+
+    [TestMethod]
+    public void ConvertNumber_ReturnsSingleDigitWord_Zero()
+    {
       string wordNum = Number.ConvertNumber("0");
       Assert.AreEqual("zero", wordNum);
     }
