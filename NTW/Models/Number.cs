@@ -70,6 +70,11 @@ namespace NTW.Models
         char secondDigit = numberArray[1];
         wordNumber = tens[firstDigit] + " " + ones[secondDigit];
       }
+      else if (stringInputNumber.Length == 2 && numberArray[0] == '0' && numberArray[1] != '0')
+      {
+        char secondDigit = numberArray[1];
+        wordNumber = ones[secondDigit];
+      }
       else
       {
         return "other";
