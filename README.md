@@ -12,13 +12,13 @@ _This console application translates numbers in numeric form into written words.
 
 | Specification | Example Input | Example Output |
 | ------------- |:-------------:| -------------------:|
-| Application takes input of a integer, and returns error message for all other inputs | "hello" | "invalid input" |
 | Application returns "zero" for input of a 0 | 0 | "zero" |
 | For a number with a single digit, the application returns the written form of that number | 1 | "one" |
 | For a number with two digits, and the first digit is a 1, the application returns a unique term for that number | 10, 11, 12, etc. | "ten", "eleven", "twelve", etc. |
 | For a number with two digits (first digit 2-9, second digit 0), the application returns the word for that number | 20 | "twenty" |
 | For a number with two digits (each digit is between 2 and 9), the application returns a combination of words for each digit | 22 | application breaks this into 20 at the ten's place and 2 at the one's place, then returns "twenty two" |
 | For a number with three digits, the application returns a combination of words corresponding to the first digit, the word "hundred", followed by the written form of the last two digits (as determined above) | 120 | "one hundred twenty" |
+| Application takes input of a integer, and returns error message for all other inputs | "hello" | "invalid input" |
 
 
 ## Setup/Installation Requirements
