@@ -37,5 +37,12 @@ namespace NTW.Tests
       Assert.AreEqual("twenty", wordNum);
     }
 
+    [TestMethod]
+    public void ConvertNumber_TwoDigitNumbers_TwentyTwo()
+    {
+      string wordNum = Number.ConvertNumber("22");
+      Assert.AreEqual("twenty two", wordNum);
+    }
+
   }
 }
