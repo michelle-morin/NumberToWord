@@ -12,7 +12,7 @@ namespace NTW.Tests
     [TestMethod]
     public void ConvertNumber_RejectNonNumericalInputs_Error()
     {
-      string wordNum = Number.ConvertNumber(0);
+      string wordNum = Number.ConvertNumber("0");
       Assert.AreEqual("zero", wordNum);
     }
   }
