@@ -65,5 +65,12 @@ namespace NTW.Tests
       Assert.AreEqual("three hundred ", wordNum);
     }
 
+    [TestMethod]
+    public void ConvertNumber_ThousandsDigitNumbers_OneThousandTwoHundred()
+    {
+      string wordNum = Number.ConvertNumber("1200");
+      Assert.AreEqual("one thousand two hundred ", wordNum);
+    }
+
   }
 }
