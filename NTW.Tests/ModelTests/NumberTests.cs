@@ -89,8 +89,8 @@ namespace NTW.Tests
     [TestMethod]
     public void ConvertNumber_Millions_MillionsWord()
     {
-      string wordNum = Number.ConvertNumber("7500385");
-      Assert.AreEqual("seven million five hundred thousand three hundred eighty five", wordNum);
+      string wordNum = Number.ConvertNumber("7502385");
+      Assert.AreEqual("seven million five hundred two thousand three hundred eighty five", wordNum);
     }
 
   }

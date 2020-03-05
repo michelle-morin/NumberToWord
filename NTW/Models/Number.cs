@@ -67,6 +67,10 @@ namespace NTW.Models
         {
           convertedNumber = Number.ConvertSixDigits(stringInputNumber, numberArray);
         }
+        else if (stringInputNumber.Length == 7)
+        {
+          convertedNumber = Number.ConvertSevenDigits(stringInputNumber, numberArray);
+        }
         else
         {
           convertedNumber = "that's too large to convert at this time!";
@@ -81,6 +85,30 @@ namespace NTW.Models
       {
         return exception.Message;
       }
+    }
+
+    public static string ConvertSevenDigits(string stringInputNumber, char[] numberArray)
+    {
+      string convertedNumber = null;
+      if (numberArray[0] == '0')
+      {
+        char[] newNumArray = { numberArray[1], numberArray[2], numberArray[3], numberArray[4], numberArray[5], numberArray[6] };
+        string newNumber = new String(newNumArray);
+        convertedNumber = Number.ConvertSixDigits(newNumber, newNumArray);
+      }
+      else
+      {
+        char firstDigit = numberArray[0];
+        char[] secondThreeArray = { numberArray[1], numberArray[2], numberArray[3] };
+        string stringSecondThree = new String(secondThreeArray);
+        char[] lastThreeArray = { numberArray[4], numberArray[5], numberArray[6] };
+        string stringLastThree = new String(lastThreeArray);
+        string firstNumber = ones[firstDigit];
+        string secondNumber = Number.ConvertThreeDigits(stringSecondThree, secondThreeArray);
+        string thirdNumber = Number.ConvertThreeDigits(stringLastThree, lastThreeArray);
+        convertedNumber = firstNumber + " million " + secondNumber + " thousand " + thirdNumber;
+      }
+      return convertedNumber;
     }
 
     public static string ConvertSixDigits(string stringInputNumber, char[] numberArray)
