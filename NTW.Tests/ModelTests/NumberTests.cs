@@ -44,5 +44,12 @@ namespace NTW.Tests
       Assert.AreEqual("twenty two", wordNum);
     }
 
+    [TestMethod]
+    public void ConvertNumber_ThreeDigitNumbers_OneHundredTwenty()
+    {
+      string wordNum = Number.ConvertNumber("120");
+      Assert.AreEqual("one hundred twenty two", wordNum);
+    }
+
   }
 }
